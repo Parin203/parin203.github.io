@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.min.css">
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<style>
+		
+		.dropdown {
+				width: 228px;
+				margin-top: -5px;
+				margin-left: -2px;
+				padding: 8px 0px;
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				-webkit-border-radius: 8px;
+				-moz-border-radius: 8px;
+				border-radius: 8px;
+				-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+				-moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+				box-shadow: 0 5px 10px rgba(0,0,0,.2);
+				position: absolute; 
+				z-index: 300; 
+				display: block; 
+				/*margin-top: 35px;*/
+				right: auto;
+		}
+		li.suggestion{
+			position: relative; 
+			list-style-type: none;
+			padding:4px 10px 4px 10px;
+			display: block;
+			text-align: left;
+			margin:1px 0px 1px 0px ;
+			margin-right: 0;
+			white-space: nowrap; 
+			cursor: pointer;
+		}
+		/*li.suggestion:hover{
+			color: #ffffff;
+			background-color: #0088cc;
+		}*/
+		.active{
+			color: #ffffff;
+			background-color: #0088cc;
+		}
+		#grey
+		{
+		    color: #CCC;
+		    background-color: transparent;
+		    z-index: -2222;
+		   /* top: 0px;
+		    left: 0px;*/
+		    position:absolute;
+		}
+		#black
+		{
+		    color: #000;
+		    background-color: transparent;
+		    z-index: 99999999;
+		    /*top: 0px;
+		    left: 0px;*/
+		    /*position:absolute;*/
+		}
+
+	</style></head>
+</head>
+<body ng-controller="ctrl" style="margin-top:50px" class="container">
+	<!-- <typeahead datasource="items"></typeahead> -->
+
+	<div class="container">
+	<div class="span3">
+		<typeahead datasource="items"></typeahead>
+	</div>
+	<div class="span3">
+		<typeahead datasource="items"></typeahead>
+	</div>
+	<div class="span3">
+		<typeahead datasource="items"></typeahead>
+	</div>
+	</div>
+	
+</body>
+<script>
+	'use strict';
+	var app = angular.module('App',[])
+	app.controller('ctrl',function($scope){
+		$scope.items = ['parin','parin kataria','mayur','mayur kataria','parth','parth kataria'];
+	});
+
+	app.directive('typeahead',function($timeout){
+		// Runs during compile
+		return {
+			scope: {
+				datasource : '='
+			},
+			restrict: 'E', 
+			template: '<div class="some">'+
+			'<input id="grey" type="text" value="{{placeholder}}" />'+
+			'<input id="black" autocomplete="off" type="text"  ng-model = "search" >'+
+			'<ul class="dropdown" ng-show="show_suggestion_list()">'+
+				'<li ng-mouseover="set_placeholder(items,$index)" ng-mouseleave="set_default($index)" ng-class="{active : class.active == $index}" ng-click="set_value(items)" class="suggestion" ng-repeat="items in filtered = (datasource | filter:search)">{{items}}</li>'+
+			'</ul></div>',
+			replace: true,
+			link: function($scope, elements, iAttrs, controller) {
+				var $input = elements.find('input');
+				$input = angular.element($input);
+				$input.bind('focus',function(){
+					$scope.$apply(function(){
+						$scope.show_suggestion = true;
+					})
+				});
+				// $input.bind('blur',function(){
+				// 	$scope.$apply(function(){
+				// 			$scope.show_suggestion = false;
+				// 	});
+				// });
+				$input.bind('keydown',function(event){
+					//tab
+					if(event.which ==  9){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.search = $scope.filtered[$scope.i];
+							$scope.placeholder = $scope.search;
+							$scope.class.active = 0;
+							$scope.i = 0;
+						});
+					}
+					//up key
+					if(event.which ==  38){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.activatePreviousItem();
+						});
+					}
+					//down key
+					if(event.which ==  40){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.activateNextItem();
+						});
+					}
+				});
+			},
+			controller : function($scope, $element, $attrs){
+				$scope.items = $scope.datasource;
+				$scope.placeholder= "Search";
+				$scope.i = 0;
+				$scope.class = {};
+				$scope.class.active = $scope.i;
+
+				
+				$scope.set_placeholder = function(value,id){
+					$scope.placeholder = value;
+					$scope.class.active = id;
+				}
+				$scope.set_default = function(id){
+					// $scope.placeholder = "Search";
+					if($scope.search == null) {
+						$scope.placeholder = "Search";
+					}
+					$scope.class.active = id;
+					$scope.i = id; 
+					console.log($scope.class.active);
+				}
+				$scope.set_value = function(value){
+					$scope.search = value;
+					console.log("hello clicked"+value);
+					$scope.show_suggestion = false;
+					$scope.focus = true;
+					var input = $element.find('input');
+					console.log(input);
+					// $scope.$digest();
+					// input.focus();
+					// angular.element(input).focus();
+				}
+				
+				$scope.activateNextItem = function(){
+					
+					console.log("next" + $scope.filtered.length);
+					if($scope.i < $scope.filtered.length -1){
+						$scope.i++;
+						$scope.class.active = $scope.i;
+						$scope.placeholder = $scope.filtered[$scope.i];
+					}
+					console.log($scope.class.active);
+				}
+				$scope.activatePreviousItem = function(){
+					console.log("prev" +$scope.filtered.length);
+					if($scope.i >= 1 ){
+						$scope.i--;
+						$scope.class.active = $scope.i;
+						$scope.placeholder = $scope.filtered[$scope.i]
+					}
+					console.log($scope.class.active);
+					console.log("len"+ $scope.len);
+				}
+				$scope.show_suggestion_list = function(){
+					if ($scope.show_suggestion && $scope.filtered.length){
+						return true;
+					}else{
+						$scope.placeholder = "";
+						return false;
+					}
+				}
+			}
+		};
+	});
+</script>
+</html>
+		

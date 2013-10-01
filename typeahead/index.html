@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.min.css">
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="">
+	<style>
+		
+		.dropdown {
+				width: 228px;
+				margin-top: -5px;
+				margin-left: -2px;
+				padding: 8px 0px;
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				-webkit-border-radius: 8px;
+				-moz-border-radius: 8px;
+				border-radius: 8px;
+				-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+				-moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+				box-shadow: 0 5px 10px rgba(0,0,0,.2);
+				position: absolute; 
+				z-index: 300; 
+				display: block; 
+				margin-top: 0px;
+				right: auto;
+		}
+		li.suggestion{
+			position: relative; 
+			list-style-type: none;
+			padding:4px 10px 4px 10px;
+			display: block;
+			text-align: left;
+			margin:1px 0px 1px 0px ;
+			margin-right: 0;
+			white-space: nowrap; 
+			cursor: pointer;
+		}
+		.active{
+			color:#ffffff;
+			background-color: #0088cc;
+		}
+		
+
+	</style></head>
+</head>
+<body ng-controller="ctrl" style="margin-top:50px" class="container">
+	<div class="span3">
+		<typeahead datasource="items" search="mysearch"><div>parin</div></typeahead>
+	</div>
+	<div class="span3 well well-large">{{mysearch}}</div>
+	
+</body>
+<script>
+	'use strict';
+	var app = angular.module('App',[])
+	app.controller('ctrl',function($scope){
+		$scope.items = ['parin','parin kataria','mayur','mayur kataria','parth','parth kataria'];
+	});
+
+	app.directive('typeahead',function($timeout){
+		// Runs during compile
+		return {
+			scope: {
+				datasource 	: '=',
+				search 		: '='
+			},
+			restrict: 'E', 
+			transclude : true,
+			templateUrl: 'template.html',
+			replace: true,
+			link: function($scope, elements, iAttrs, controller) {
+				var $input = elements.find('input');
+				$input = angular.element($input);
+				$input.bind('focus',function(){
+					$scope.$apply(function(){
+						$scope.show_suggestion = true;
+					})
+				});
+				$input.bind('blur',function(){
+					$scope.$apply(function(){
+							$scope.set_default();
+							$scope.show_suggestion = false;
+					});
+				});
+				$input.bind('keydown',function(event){
+					//escape key
+					if(event.which === 27){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.show_suggestion=false;
+						});
+					}
+					//tab
+					if(event.which === 9){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.tab_hit($scope.selected_item);
+						});
+					}
+					//up key
+					if(event.which ===  38){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.activatePreviousItem();
+						});
+					}
+					//down key
+					if(event.which ===  40){
+						event.preventDefault();
+						$scope.$apply(function(){
+							$scope.show_suggestion_list();
+							$scope.activateNextItem();
+						});
+					}
+					//enter key
+					if(event.which ===  13){
+						$scope.$apply(function(){
+							$scope.enter_hit();
+						});
+					}
+				});
+			},
+			controller : function($scope, $element, $attrs,$templateCache,$compile){
+				// var template = $templateCache.get('template.html');
+				// // var compiled_template = $compile(template)($scope);
+				// var template_str = template[1];
+				// console.info(template_str.split('\n'));
+				$scope.items = $scope.datasource;
+				$scope.placeholder= "Search";
+				$scope.class = {};
+				$scope.class.active = -1;
+
+				$scope.tab_hit=function(item){
+					if($scope.placeholder !== "search"){
+						$scope.search = $scope.placeholder;
+					}
+					$timeout(function(){
+						if($scope.filtered.length <= 1){
+							$scope.show_suggestion = false;
+						}
+					});
+				}
+				$scope.enter_hit = function(){
+					if($scope.placeholder !== "search"){
+						$scope.search = $scope.placeholder;
+					}
+					$scope.show_suggestion = false;
+				}
+
+				$scope.set_placeholder = function(value,id){
+					$scope.class.active = id;
+					$scope.placeholder = value;
+				}
+				$scope.set_default = function(){
+					$scope.placeholder = "Search";
+					$scope.class.active = -1;
+				}
+				$scope.set_value = function(value,index){
+					$scope.search = value;
+					$scope.class.active = -1;
+				}
+				
+				$scope.activateNextItem = function(){
+					$scope.class.active++;
+					if($scope.class.active >= $scope.filtered.length){
+						$scope.class.active = 0;
+					}
+					// console.log("current" + $scope.class.active);
+					$scope.placeholder = $scope.filtered[$scope.class.active];
+				}
+
+				$scope.activatePreviousItem = function(){
+					$scope.class.active--;
+					if($scope.class.active < 0 ){
+						$scope.class.active = $scope.filtered.length -1;
+					}
+					// console.log("current" + $scope.class.active);
+					$scope.placeholder = $scope.filtered[$scope.class.active];
+				}
+				$scope.show_suggestion_list = function(flag){
+					if ($scope.show_suggestion && $scope.filtered.length){
+						return true;
+					}else{
+						return false;
+					}
+				}
+				$scope.changed = function(){
+					$scope.set_default();
+					$scope.placeholder = "Search";
+					$scope.show_suggestion = true;
+					$scope.class.active = -1;
+				}
+			}
+		};
+	});
+
+</script>
+</html>

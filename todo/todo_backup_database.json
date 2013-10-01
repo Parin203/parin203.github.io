@@ -1,3 +1,0 @@
-{ "_id" : { "$oid" : "51e56f3b1fccdd9a04b866dc" }, "title" : "Algorithm Practice", "due_date" : "2013-07-16", "description" : "Top Coder", "priority" : 3, "tags" : [ "Algorithm" ], "date_added" : "2013-07-16" }
-{ "_id" : { "$oid" : "51e570171fccdd9a047d5f5e" }, "title" : "Data Structure Practice", "due_date" : "2013-07-16", "priority" : 3, "tags" : [ "Data Structure" ], "date_added" : "2013-07-16" }
-{ "_id" : { "$oid" : "51e5761e1fccdd9a04b63060" }, "title" : "update module", "due_date" : "2013-07-17", "description" : "todo list update module", "priority" : 5, "tags" : [ "my_project" ], "date_added" : "2013-07-16" }
