@@ -1,4 +1,0 @@
-<div><input placeholder="{{placeholder}}" ng-change="changed()" autocomplete="off" type="text"  ng-model = "search">
-	<ul class="dropdown" ng-show="show_suggestion_list()">
-		<li ng-mousedown="set_value(items,$index)" ng-mouseover="set_placeholder(items,$index)" ng-class="{active : class.active == $index}" ng-click="set_value(items)" class="suggestion" ng-repeat="items in filtered = (datasource | filter:search)" >{{items}}</li>
-</ul></div>
