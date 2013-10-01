@@ -1,0 +1,103 @@
+<html ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Animation</title>
+
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="js/lib/bootstrap/css/bootstrap.min.css">
+  <script  type="text/javascript" src="http://code.angularjs.org/1.1.5/angular.js" ></script 
+  <style type="text/css">
+      .animate-enter { 
+                    -webkit-animation: enter 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+                    animation: enter 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+                  display: block;
+                    position: relative;
+                } 
+                @-webkit-keyframes enter {
+                  from {
+                      opacity: 0;
+                      height: 0px;
+                      left: -70px;
+                    }
+                    75% {
+                      left: 15px;
+                    }
+                    to {
+                        opacity: 1;
+                      height: 30px;
+                      left: 0px;
+                    }
+                }
+                @keyframes enter {
+                  from {
+                      opacity: 0;
+                      height: 0px;
+                      left: -70px;
+                    }
+                    75% {
+                      left: 15px;
+                    }
+                    to {
+                        opacity: 1;
+                      height: 30px;
+                      left: 0px;
+                    }
+                }
+
+                .animate-leave { 
+                    -webkit-animation: leave 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+                    animation: leave 600ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+                  display: block;
+                    position: relative;
+                } 
+                @-webkit-keyframes leave {
+                  to {
+                      opacity: 0;
+                      height: 0px;
+                      left: -70px;
+                    }
+                    25% {
+                      left: 15px;
+                    }
+                    from {
+                        opacity: 1;
+                      height: 30px;
+                      left: 0px;
+                    }
+                }
+                @keyframes leave {
+                  to {
+                      opacity: 0;
+                      height: 0px;
+                      left: -70px;
+                    }
+                    25% {
+                      left: 15px;
+                    }
+                    from {
+                        opacity: 1;
+                      height: 30px;
+                      left: 0px;
+                    }
+                }
+  </style>
+  
+</head>
+<body ng-init="names=['Igor Minar', 'Brad Green', 'Dave Geddes', 'Naomi Black', 'Greg Weber', 'Dean Sofer', 'Wes Alvaro', 'John Scott', 'Daniel Nadasi'];">
+  <div class="well" >
+    <form class="form-search"> 
+        <div class="input-append">
+          <input type="text" ng-model="search" class="search-query" style="width: 80px">
+          <button type="submit" class="btn">Search</button>
+        </div>
+        <ul class="nav nav-pills nav-stacked">
+          <li ng-animate="'animate'" ng-repeat="name in names | filter:search">
+            <a href="#"> {{name}} </a>
+          </li> 
+      </ul>
+    </form>
+  </div>
+</body>
+</html>

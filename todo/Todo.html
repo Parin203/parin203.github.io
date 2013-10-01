@@ -1,0 +1,162 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/lib/bootstrap/css/bootstrap.min.css">
+  </head>
+  <body ng-controller="myTodoCtrl" >
+
+    <div class="container btn-inverse hero-unit"><h1>Daddy's Home</h1></div>
+    <div class="container">
+      <div class="row-fluid ">
+          <div class="span4 well well-large">
+            <form name="todo_form">
+            <h1>Add ToDo</h1>
+            <label>Title</label><input type="text" ng-model="title"  name="title" required>
+            <!--<span  class="error" ng-show="todo_form.title.$error.required"> Please Enter Value
+            </span>-->
+            <label>Duedate</label> <input type="date" class="datepicker" name="duedate" ng-model="duedate" required >
+            <!--<span<span  class="error" ng-show="todo_form.duedate.$error.required">Please Enter Value</span> -->
+            <label>Description</label><textarea  ng-model="description"  name="description"></textarea>
+            
+            <label>Priority</label><input type="number"  ng-model="priority"  name="priority" required>
+            <!--<span<span class="error"  ng-show="todo_form.priority.$error.required">Please Enter Number</span> 
+            -->
+            <input type="button" class="btn btn-primary" ng-click="add_entry()" ng-disabled="!todo_form.$valid" value="Add To List">
+            <input type="button" class="btn btn-danger" ng-click="reset_form()"  value="Reset">
+           
+            </form> 
+          </div>
+            <div class="span8 well well-large">
+             <input type="text"  placeholder="anything" ng-model="query.$">
+                  <input type="date" placeholder="duedate" ng-model = "query.duedate"> 
+                  <input type="text" placeholder="priority" ng-model = "query.priority" > 
+            </div>
+              <div class="span8 well well-large">
+              <h1> To Do List </h1>
+              <div class="accordion" id="accordion2">
+                <div class="accordion-group" ng-class="todo.class_var" ng-repeat="todo in todos | filter : query |  orderBy:'duedate' | orderBy:'priority'" >
+                  <div class="accordion-heading" >
+                      <a class="accordion-toggle" style="display:inline" data-toggle="collapse" data-parent="#accordion2" href="#{{$index}}">
+                    <span class="span5"><h4><b>&nbsp;&nbsp;{{todo.title}} </b></h4></span>
+                    </a> 
+                    || {{todo.priority}} || {{todo.duedate}}
+
+                    <button class="btn  btn-inverse " ng-click="edit_entry($index)">
+                    <i class="icon icon-pencil icon-white"></i></button>
+                    <button class="btn  btn-danger " ng-click="delete_entry($index)">
+                    <i class="icon icon-remove icon-white"></i></button>
+                    <button class="btn  btn-success " ng-click="todo_done($index)">
+                    <i class="icon icon-ok icon-white"></i></button>
+
+                  </div>
+                  <div id="{{$index}}" class="accordion-body collapse">
+                    <div class="accordion-inner">   
+                      <h4><p>{{todo.description}}</p><h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+    </div>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+  //===============LIBRARIES=======================================================
+  </script>
+  
+  <script>
+  //===============CUSTOM JS=======================================================
+  </script>
+  <script>
+        function myTodoCtrl($scope){
+          
+         $scope.todos = get_from_ls('todo_ls'); //it's an array [todo,todo,todo]
+         $scope.class_var="alert alert-error"
+        //======================================================================
+        $scope.add_entry = function(index){
+                                      var todo = {};
+
+
+                                      todo.title       =  $scope.title    ;
+                                      todo.duedate     =  $scope.duedate  ; 
+                                      todo.description =  $scope.description;
+                                      todo.dateadded   =  $scope.dateadded;
+                                      todo.priority    =  $scope.priority ; //highest=5,lowest=1
+                                      if (todo.priority <3) {
+                                      todo.class_var = "alert alert-error";
+                                      }
+                                      else{
+                                          if(todo.priority >4){
+                                            todo.class_var = "alert alert-info";
+                                          }
+                                        else{
+                                          todo.class_var = "alert alert-warning";
+                                        }
+                                      }
+                                      $scope.todos.push(todo);
+                                      save_to_ls('todo_ls',$scope.todos);
+                                      $scope.reset_form();
+                                      }
+
+        $scope.edit_entry = function(index){
+                                      $scope.title       = $scope.todos[index].title    ; 
+                                      $scope.duedate     = $scope.todos[index].duedate  ; 
+                                      $scope.description = $scope.todos[index].description; 
+                                      $scope.dateadded   = $scope.todos[index].dateadded; 
+                                      $scope.priority    = $scope.todos[index].priority ; 
+                                      if ($scope.priority <3) {
+                                      $scope.todos[index].class_var = "alert alert-error";
+                                      } else{
+                                          if($scope.priority >4){
+                                            $scope.todos[index].class_var = "alert alert-info";
+                                          }
+                                        else{
+                                          $scope.todos[index].class_var = "alert alert-warning";
+                                        }
+                                      } 
+                                      $scope.delete_entry(index);
+                                      }
+        $scope.todo_done  = function(index){
+          $scope.delete_entry(index);
+        }
+
+        $scope.delete_entry = function(index){
+                                      $scope.todos.splice(index,1);
+                                      save_to_ls('todo_ls',$scope.todos);
+                                      }
+        //======================================================================
+        $scope.reset_form   = function (){
+              $scope.title    =undefined;
+              $scope.duedate  =undefined;
+              $scope.priority =undefined;
+              $scope.description =undefined;
+            }
+            function save_to_ls(key,value){
+              var json= JSON.stringify(value);
+              localStorage.setItem(key,json);
+            }
+        
+            function get_from_ls(key){ 
+              var json = localStorage.getItem(key);
+              if(json == null){
+                save_to_ls('todo_ls',[])
+                return [];
+              }
+              else 
+                return JSON.parse(json);
+            }
+        //======================================================================
+        }
+  </script>  
+
+</body>
+</html>

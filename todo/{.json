@@ -1,0 +1,45 @@
+{
+  "name": "my procrastinator",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "My first Chrome extension.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html",
+    "default_title": "parin's todo"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "js/lib/jquery.min.js",
+      "js/lib/angular.min.js",
+      "js/lib/bootstrap/js/bootstrap.min.js",
+      "js/app.js"
+    ]
+  },
+"content_security_policy": "default-src 'self' 'unsafe-eval'",
+   "content_scripts": [
+    {
+      "js": [
+        "js/lib/jquery.min.js",
+        "js/lib/angular.min.js",
+        "js/lib/bootstrap/js/bootstrap.min.js",
+        "js/app.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "minimum_chrome_version": "20",
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "unlimitedStorage",
+    "contextMenus",
+    "cookies",
+    "tabs",
+    "notifications"
+  ]
+}
