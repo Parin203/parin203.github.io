@@ -1,0 +1,872 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"create",
+				"createbag"
+			],
+			[
+				"binar",
+				"binary(plist, item)	(global, function)"
+			],
+			[
+				"list",
+				"list	(local, instance)"
+			],
+			[
+				"min",
+				"min0"
+			],
+			[
+				"max",
+				"max0"
+			],
+			[
+				"floor",
+				"__rfloordiv__	magic"
+			],
+			[
+				"ng-bind",
+				"ng-bind-html-unsafe	AngularJS"
+			],
+			[
+				"col",
+				"col_n"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ngre",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"focus",
+				"focus_next"
+			],
+			[
+				"show",
+				"show_alert_error"
+			],
+			[
+				"lane",
+				"$scope.lane_id_output"
+			],
+			[
+				"clear",
+				"clear_main"
+			],
+			[
+				"lan",
+				"$scope.lane_id_output"
+			],
+			[
+				"show_",
+				"show_target"
+			],
+			[
+				"$route",
+				"$routeParams"
+			],
+			[
+				"json",
+				"angular.toJson	AngularJS"
+			],
+			[
+				"ma",
+				"mainCntl"
+			],
+			[
+				"rout",
+				"routeParams"
+			],
+			[
+				"$rout",
+				"$routeProvider.when	AngularJS"
+			],
+			[
+				"in",
+				"$scope.input_count"
+			],
+			[
+				"blur",
+				"blur_select_bag"
+			],
+			[
+				"input",
+				"$scope.input_bag_type"
+			],
+			[
+				"select",
+				"select_bag"
+			],
+			[
+				"bag",
+				"bag_type"
+			],
+			[
+				"create_",
+				"create_bag_controller"
+			],
+			[
+				"menu",
+				"menu_items"
+			],
+			[
+				"emp",
+				"emp_scan"
+			],
+			[
+				"inscan",
+				"inscan_controller"
+			],
+			[
+				"type",
+				"type=\"text"
+			],
+			[
+				"com",
+				"compile"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"get",
+				"getfield"
+			],
+			[
+				"data",
+				"dataresource"
+			],
+			[
+				"mod",
+				"model"
+			],
+			[
+				"on",
+				"onaddsearch"
+			],
+			[
+				"fuc",
+				"function"
+			],
+			[
+				"loo",
+				"lookup_ctrl"
+			],
+			[
+				"func",
+				"function"
+			],
+			[
+				"num",
+				"num_votes"
+			],
+			[
+				"sear",
+				"serach_by"
+			],
+			[
+				"usr",
+				"user_rating"
+			],
+			[
+				"encode",
+				"encode('ascii','ignore"
+			],
+			[
+				"asc",
+				"ascii"
+			],
+			[
+				"prin",
+				"print	print"
+			],
+			[
+				"find",
+				"findAll"
+			],
+			[
+				"title",
+				"title_href"
+			],
+			[
+				"run",
+				"runtime"
+			],
+			[
+				"tite",
+				"title_href"
+			],
+			[
+				"img",
+				"img['src"
+			],
+			[
+				"user",
+				"user_rating"
+			],
+			[
+				"attrs",
+				"attrs={'class':'results"
+			],
+			[
+				"compile",
+				"compile	compile"
+			],
+			[
+				"href",
+				"href=\\\\\"http"
+			],
+			[
+				"comp",
+				"compile	compile"
+			],
+			[
+				"open",
+				"open"
+			],
+			[
+				"impor",
+				"import"
+			],
+			[
+				"import",
+				"__import__	__import__"
+			],
+			[
+				"request",
+				"requests"
+			],
+			[
+				"Beau",
+				"BeautifulSoup"
+			],
+			[
+				"requ",
+				"requests"
+			],
+			[
+				"print",
+				"print	print"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "animate.html",
+			"settings":
+			{
+				"buffer_size": 2340,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/parin/my_projects/loading/sample01/index.html",
+			"settings":
+			{
+				"buffer_size": 3096,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/php.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"enable ",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"ipython",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"remove",
+				"Emmet: Remove Tag"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pc",
+				"Package Control: List Packages"
+			],
+			[
+				"pci",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"console",
+				"SublimeREPL: Python - Sublime Text Console"
+			],
+			[
+				"python",
+				"SublimeREPL: Python - Sublime Text Console"
+			],
+			[
+				"pyt",
+				"Set Syntax: Regular Expressions (Python)"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"replpython",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"run",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"RUN",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"current",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"run curr",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"replpytho",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"repl python",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"sublime",
+				"SublimeREPL: Python"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/parin/work/src/dms/js/services.js",
+		"/home/parin/work/src/dms/js/create_bag.js",
+		"/home/parin/work/src/dms/html/bag_received.html",
+		"/home/parin/work/src/dms/js/bag_received.js",
+		"/home/parin/work/src/dms/js/close_bag.js",
+		"/home/parin/work/src/dms/js/dispatch_bag.js",
+		"/home/parin/work/src/dms/js/bagging_process.js",
+		"/home/parin/work/src/dms/html/bagging_process.html",
+		"/home/parin/my_projects/todo/script.js",
+		"/home/parin/my_projects/todo/bindex.html",
+		"/home/parin/my_projects/testing/animate.html",
+		"/home/parin/Programming/python testing/binary_search.py",
+		"/home/parin/Programming/python testing/oneline.py",
+		"/home/parin/Programming/python testing/test.py",
+		"/home/parin/my_projects/journal/index.php",
+		"/home/parin/my_projects/todo/image.html",
+		"/home/parin/my_projects/todo/book.html",
+		"/home/parin/my_projects/todo/chapter.html",
+		"/home/parin/my_projects/todo/index.html",
+		"/home/parin/my_projects/Book/jquery.min.js",
+		"/home/parin/my_projects/Book/test.html",
+		"/home/parin/Programming/del.html",
+		"/home/parin/sources/css/ng_animate_fade.css",
+		"/home/parin/.config/sublime-text-3/Packages/User/View In Browser.sublime-settings",
+		"/home/parin/.config/sublime-text-3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/home/parin/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/parin/my_projects/todo/php/index.php",
+		"/home/parin/my_projects/todo/css/my.css",
+		"/home/parin/my_projects/todo/animate.html",
+		"/home/parin/work/src/dms/html/close_bag.html",
+		"/home/parin/work/src/dms/html/dispatch_bag.html",
+		"/home/parin/work/src/dms/html/inscan.html",
+		"/home/parin/work/src/dms/html/bag_inscan.html",
+		"/home/parin/work/src/dms/html/create_bag.html",
+		"/home/parin/work/src/dms/js/inscan.js",
+		"/home/parin/work/src/dms/js/bagging_screen.js",
+		"/home/parin/work/src/dms/js/packing.js",
+		"/home/parin/my_projects/baliga/html/inlineParam.html",
+		"/home/parin/my_projects/baliga/html/temp.html",
+		"/home/parin/my_projects/baliga/index.html",
+		"/home/parin/my_projects/imdb/index.html",
+		"/home/parin/my_projects/baliga/html/refreshParam.html",
+		"/home/parin/my_projects/imdb/complete.py",
+		"/home/parin/my_projects/Book/book.html",
+		"/home/parin/my_projects/Book/chapter.html",
+		"/home/parin/my_projects/Book/index.html",
+		"/home/parin/my_projects/Book/script.js",
+		"/home/parin/my_projects/imdb/test.py",
+		"/home/parin/my_projects/todo/js/lib/angular.min.js",
+		"/home/parin/my_projects/todo/index.php",
+		"/home/parin/work/src/racking/js/unrack.js",
+		"/home/parin/work/src/dms/html/bali.html",
+		"/home/parin/work/src/hq/zhq/wms/js/shipping_screen.js",
+		"/home/parin/work/src/dms/js/packing_screen.js",
+		"/home/parin/work/src/dms/html/test.html",
+		"/home/parin/work/src/dms/js/barcode.js",
+		"/home/parin/work/src/hq/zhq/dmsService/html/index.html",
+		"/home/parin/work/src/dmsService/html/index.html",
+		"/home/parin/work/src/dms/html/index.html",
+		"/home/parin/work/src/dms/html/common/menu.html",
+		"/home/parin/my_projects/baliga/js/menu_dir.js",
+		"/home/parin/my_projects/imdb/tweet.py",
+		"/home/parin/my_projects/imdb/testing.py",
+		"/home/parin/my_projects/baliga/html/index.html",
+		"/home/parin/my_projects/baliga/html/app.js",
+		"/home/parin/my_projects/baliga/html/def.html",
+		"/home/parin/my_projects/baliga/html/abc.html",
+		"/home/parin/my_projects/imdb/cron.py",
+		"/home/parin/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/parin/my_projects/imdb/movie.json",
+		"/home/parin/work/src/dms/js/login_dir.js",
+		"/home/parin/my_projects/todod/index.php",
+		"/home/parin/work/dmsService/html/index.html",
+		"/home/parin/my_projects/imdb/abc.html",
+		"/home/parin/my_projects/imdb/main.py",
+		"/home/parin/my_projects/imdb/title.py",
+		"/home/parin/my_projects/imdb/test.html",
+		"/home/parin/Programming/html/my.html",
+		"/home/parin/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/parin/my_projects/imdb/del.html",
+		"/home/parin/my_projects/imdb/details.html",
+		"/home/parin/Programming/python/test.py",
+		"/home/parin/.config/sublime-text-3/Packages/User/php.sublime-build",
+		"/home/parin/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/parin/.config/sublime-text-3/Packages/User/pydev.py",
+		"/home/parin/Programming/algo.py",
+		"/home/parin/Programming/test.html",
+		"/home/parin/Programming/algo2.py",
+		"/home/parin/Programming/testing beautiful soup/my.py",
+		"/home/parin/.config/sublime-text-3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/home/parin/abc.html",
+		"/home/parin/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"focus_next",
+			"index.php",
+			"$scope",
+			"2",
+			"max0",
+			"list",
+			"max",
+			"animate",
+			"i",
+			" style=\"background-color:rgb(228, 215, 215)\"",
+			"color",
+			"background-color:rgb(",
+			"background-color:rgb(228, 215, 215,0.6)",
+			"<tr>",
+			"background-color:white",
+			"<tr>\n						<td class=\"span4\" style=\"background-color:white\" ><h1>css rocks</h1></td>",
+			"<td class=\"span4\" style=\"background-color:white\" ></td>",
+			"../lib",
+			"js",
+			"../lib",
+			"white",
+			"hide",
+			"bage_id_output",
+			"lane_id",
+			"$scope",
+			"$scope.",
+			"undefined",
+			"emp_scan_done",
+			"done",
+			"blur",
+			"awb_done",
+			"lane_id",
+			"emp_scan_output",
+			"emp_scan_done",
+			"emp_scan_done ",
+			"...",
+			"..",
+			"$rootScope",
+			"}\n",
+			"2",
+			"lane_id",
+			"input_lane_id",
+			"focus_next",
+			"read_again",
+			"read_next",
+			"clear_text",
+			"grey",
+			"select_bag",
+			"select",
+			"select_bag",
+			"select",
+			"emp_scan_done",
+			"emp_scan_outpu",
+			"legend",
+			"bag_type",
+			"clear_main",
+			" \"menu_name\" : ",
+			"\"menu_name\" : \"Inscan\",\n    \"href\"      : \"inscan.html\",",
+			"\"href\"",
+			" \"href\"  ",
+			"\"menu_name\" :",
+			"\"menu_name\" : \"Inscan\",",
+			"\"service\"   : \"\"",
+			"/",
+			">\n",
+			" \"order\"     : ",
+			"\"class\"     : \"\",",
+			"#!",
+			"dataresource",
+			"{{",
+			");\n",
+			"myModal",
+			"@",
+			"=",
+			"'=',\n",
+			"'=',",
+			"=",
+			"'=',",
+			"@",
+			"h6",
+			"myapp",
+			"myApp",
+			"text",
+			"=",
+			"='@',",
+			"len 150",
+			"len",
+			"NA",
+			"na",
+			"NA",
+			"/",
+			"N/A",
+			" 'N/A'\n",
+			"'N/A'",
+			"N/A",
+			"print",
+			"credit",
+			"credits",
+			"Dir",
+			"dir",
+			"director",
+			"(',')) ",
+			"year",
+			"... ",
+			"genre",
+			"href",
+			"name",
+			"runtime",
+			"img_src",
+			"print",
+			"a",
+			"table",
+			"a",
+			"tr",
+			"title",
+			"moviemeter,asc",
+			"105",
+			"class",
+			"\"':\"",
+			"class",
+			"done",
+			"my",
+			"\"",
+			"highlight_modi",
+			"\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"New",
+			">\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "animate.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2340,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1177,
+								1177
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/parin/my_projects/loading/sample01/index.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3096,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 220.0
+	},
+	"project": "animation.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"todo/ind",
+				"todo/index.html"
+			],
+			[
+				"todo/",
+				"todo/image.html"
+			],
+			[
+				"bindex",
+				"todo/bindex.html"
+			],
+			[
+				"my.css",
+				"todo/css/my.css"
+			],
+			[
+				"index.htl",
+				"todo/index.html"
+			],
+			[
+				"index.php",
+				"todo/php/index.php"
+			],
+			[
+				"sorting",
+				"work/src/wms/js/sorting.js"
+			],
+			[
+				"create",
+				"js/create_bag.js"
+			],
+			[
+				"index.html",
+				"todo/index.html"
+			],
+			[
+				"unrakc",
+				"racking/html/unrack.html"
+			],
+			[
+				"rack",
+				"racking/js/unrack.js"
+			],
+			[
+				"shipping",
+				"wms/js/shipping_screen.js"
+			],
+			[
+				"menu_dir",
+				"my_projects/baliga/js/menu_dir.js"
+			],
+			[
+				"login",
+				"work/src/dms/js/login_dir.js"
+			],
+			[
+				"index",
+				"work/dmsService/html/index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"animat",
+				"~/my_projects/animation/animation.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 234.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

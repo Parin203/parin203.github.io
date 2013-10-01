@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/animate_css/animate.css">
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+</head>
+<body ng-controller="ctrl" class="well">
+	<div class="row">
+		<div class="span3 well" ng-init="hide=true">
+			<button ng-click="classs='bounceInUp';hide=false" class="btn btn-primary">show</button>
+			<button ng-click="classs='bounceOutDown'" class="btn btn-primary">Hide</button>{{!hide}} {{classs}}
+			<button class="btn btn-primary span2 animated " ng-class="classs" style="margin-left:200px;z-index:400"  ng-hide="hide">i am shown</button>
+			<ul class="nav nav-tabs nav-stacked"><li ng-repeat="class in classes" ><a href="" ng-click="show(class)">{{class}}</a></li></ul>
+
+		</div>
+		<div class="span8" style="position:fixed;top:100px;left:300px;z-index:1">
+			
+			<br><br><br>
+			<br><br>
+
+			<div ng-show="show_div" class="container btn btn-inverse animated  span4 offset2" ng-class="class" ><b>{{hello}}</b></div>
+		</div>
+	</div>
+</body>
+<script>
+	'use strict';
+	var app = angular.module('App',[])
+	app.controller('ctrl',function($scope){
+		$scope.class="flip";
+		$scope.show_div = false;
+		$scope.hello="hello world";
+		$scope.show = function(param){
+			$scope.show_div=false;
+			$scope.show_div=true;
+			$scope.class = param;
+		};
+		$scope.str = "------ flash bounce shake tada swing wobble wiggle pulse ------ flip flipInX flipOutX flipInY flipOutY ------ fadeIn fadeInUp fadeInDown fadeInLeft fadeInRight fadeInUpBig fadeInDownBig fadeInLeftBig fadeInRightBig ------ fadeOut fadeOutUp fadeOutDown fadeOutLeft fadeOutRight fadeOutUpBig fadeOutDownBig fadeOutLeftBig fadeOutRightBig ------ bounceIn bounceInDown bounceInUp bounceInLeft bounceInRight bounceOut bounceOutDown bounceOutUp bounceOutLeft bounceOutRight ------ rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight ------ lightSpeedIn lightSpeedOut ------ hinge rollIn rollOut"
+		$scope.classes = $scope.str.split(' ');
+	});
+</script>
+</html>
+		
